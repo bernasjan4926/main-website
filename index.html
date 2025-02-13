@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoXploits</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0D1117;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background: #161B22;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #008080, #8B0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-container {
+            margin-top: 10px;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+            background: #21262D;
+        }
+        .nav-links a:hover {
+            background: #30363D;
+        }
+        .discord-icon img {
+            width: 35px;
+            height: 35px;
+            vertical-align: middle;
+            transition: 0.3s;
+        }
+        .discord-icon img:hover {
+            opacity: 0.8;
+        }
+        .products {
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product {
+            background: #21262D;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .product:hover {
+            background: #30363D;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .product img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+        .product h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .product .price {
+            font-size: 1rem;
+            color: #58A6FF;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product .description {
+            font-size: 0.9rem;
+            color: #BDBDBD;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Synsworks</h1>
+    </header>
+
+    <!-- Centered Navigation -->
+    <div class="nav-container">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="https://synsworks.gitbook.io/synsworks-api-docs/">Docs</a>
+            <a href="https://discord.gg/zZVGEurG3Q" target="_blank" class="discord-icon">
+                <img src="ds.png" alt="Discord">
+            </a>
+        </nav>
+    </div>
+
+    <!-- Product Previews -->
+    <section class="products">
+        <div class="product" data-product="SX">
+            <img src="Executor.png" alt="SynsExecutor">
+            <h3>SynsExecutor</h3>
+            <p class="price">$3 - $30</p>
+            <p class="description"> Lua executor for roblox.</p>
+        </div>
+        <div class="product" data-product="Accounts">
+            <img src="accounts.png" alt="Accounts">
+            <h3>Accounts</h3>
+            <p class="price">$2 - $7</p>
+            <p class="description">Pre-leveled accounts with various options.</p>
+        </div>
+    </section>
+
+    <script>
+        // Make product previews clickable and redirect to checkout
+        document.querySelectorAll(".product").forEach(product => {
+            product.addEventListener("click", function() {
+                const productName = this.dataset.product;
+                window.location.href = `checkout.html?product=${productName}`;
+            });
+        });
+    </script>
+</body>
+</html>
